@@ -1,14 +1,103 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+html,
 body {
+  border: 0;
   margin: 0;
-  padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+}
+#root {
+  --initial-color : none;
+  --new-color: none;
+  font-family: 'Roboto', sans-serif;
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--initial-color);
+  
+
+ 
+}
+#quote-box{
+  width: 500px;
+ padding: 10px;
+ margin: 10px;
+ color:var(--new-color);
+background: white;
+border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+#author{
+ align-self: flex-end;
+ font-size: 18px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+#new-quote{
+  border: none;
+  height: 35px;
+  border-radius: 5px;
+  color: white;
+  text-shadow: 1px 1px white;
+  background: var(--new-color);
+}
+#new-quote:hover,#tweet-quote:hover{
+  cursor: pointer;
+  transform: scale(1.1);
+  border-radius: 5px;
+}
+#text{
+  font-size: 32px; 
+  visibility: hidden;
+  
+}
+#tweet-quote{
+  text-decoration: none;
+  font-size: 32px;
+  font-weight: bold;
+  width: 30px;
+  text-align: center;
+  color: white;
+  border-radius: 5px;
+  text-shadow: 1px 1px white;
+  background: var(--new-color);
+}
+
+.btn-container{
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+ 
+ 
+}
+.run-animation-1{
+  animation-name: show;
+  animation-duration: 500ms;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+ 
+}
+.run-animation-2{
+  animation-name: color-background;
+  animation-duration: 500ms;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+@keyframes show{
+  0%{
+    opacity: 0;
+  }
+  50%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+    visibility: visible;
+  }
+}
+@keyframes color-background {
+  to{
+    background: var(--new-color);
+  }
 }
